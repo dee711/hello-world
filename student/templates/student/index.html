@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiu</title>
+
+ {% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'student/style.css' %}" />
+ <!-- jQuery -->
+    <script src="j{% static 'student/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'student/bootstrap.min.js' %}"></script>
+ <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{% static 'student/bootstrap.min.css' %}" type="text/css">
+</head>
+<body>
+ <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#pricing">PRICING</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+   <div class="jumbotron text-center">
+<ul>
+{% for athlete in ab %}
+    <li id="k">{{ athlete.name }}  {{ athlete.roll }}</li>
+{% endfor %}
+</ul>
+<form action="{% url 'student:read' %}" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="put any name" name="name"><input type="text" placeholder="Roll NO." name="roll"><input type="submit" value="add">
+</form></br></br></br>
+<center><h1>Search database</h1></center>
+<form action="{% url 'student:search' %}" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="put any name" name="name"></br><center><h1>Or</h1></br></center><input type="text" placeholder="Roll NO." name="roll"><input type="submit" value="Search">
+</form></div>
+<div class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off"></span>
+      <h4>POWER</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart"></span>
+      <h4>LOVE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock"></span>
+      <h4>JOB DONE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    </div>
+    <br><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf"></span>
+      <h4>GREEN</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate"></span>
+      <h4>CERTIFIED</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench"></span>
+      <h4>HARD WORK</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEarch rslts</title>
+</head>
+<body>
+<body>{{  namea  }} {{ ab.name }}<ul>
+{% for athlete in ab %}
+{% ifequal athlete.name namea %}
+    <li>{{ athlete.name }}  {{ athlete.roll }}</li>
+
+
+    {% else %}
+    <p>No athletes are available.</p>
+    {% endifequal %}
+{% endfor %}
+</ul>
+
+</body>
+</html>
