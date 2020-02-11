@@ -7,7 +7,7 @@ debtagshw==0.1
 defer==1.0.6
 dirspec==13.10
 dj-database-url==0.3.0
-Django==1.9.2
+Django==1.11.28
 duplicity==0.6.23
 gunicorn==19.4.5
 gyp==0.1
